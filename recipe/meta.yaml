@@ -14,7 +14,7 @@ build:
     - pydatamail_google=pydatamail_google.__main__:command_line_parser
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
