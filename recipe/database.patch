@@ -1,0 +1,22 @@
+From 4cdc38d38999d7238cfa01e7cdc92b523c0f7363 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan.janssen@outlook.com>
+Date: Sun, 20 Feb 2022 17:19:49 -0700
+Subject: [PATCH] Fix database issue
+
+---
+ pydatamail_google/local.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pydatamail_google/local.py b/pydatamail_google/local.py
+index 3bdb469..5400730 100644
+--- a/pydatamail_google/local.py
++++ b/pydatamail_google/local.py
+@@ -93,7 +93,7 @@ def __init__(
+ 
+         # Initialize database
+         if "database" in self._config_dict.keys():
+-            database = self._create_database(
++            database = self.create_database(
+                 connection_str=self._config_dict["database"]
+             )
+         else:
