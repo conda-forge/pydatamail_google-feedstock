@@ -8,13 +8,15 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydatamail_google-{{ version }}.tar.gz
   sha256: 7761f1f2639b2708794228addfa4dceb8f856027720d07e6936ba03db9903466
+  patches: 
+    - database.patch
 
 build:
   entry_points:
     - pydatamail_google=pydatamail_google.__main__:command_line_parser
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
