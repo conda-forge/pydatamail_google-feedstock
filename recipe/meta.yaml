@@ -1,5 +1,5 @@
 {% set name = "pydatamail_google" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydatamail_google-{{ version }}.tar.gz
-  sha256: fef8a65e4e17abe1aa62dec17c6f561c93f0fbcd0a53aa1b54268d8ea890109e
+  sha256: 02598f0cef77a9d08f84215b91167040475b2781b500d553bf414627a5ebe15d
 
 build:
   entry_points:
