@@ -1,5 +1,5 @@
 {% set name = "pydatamail_google" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydatamail_google-{{ version }}.tar.gz
-  sha256: 139e3197d02743e3826c6f18bd254039fbe846b84f86625b6ac323f45d3a4078
+  sha256: 34bc8572f81f12c770a83fce2f867465f72104d414750e026df1272a11539837
 
 build:
   entry_points:
@@ -25,11 +25,11 @@ requirements:
     - google-auth >=2.8.0
     - google-auth-oauthlib >=0.5.2
     - matplotlib-base >=3.5.2
-    - numpy >=1.22.4
-    - pandas >=1.4.2
-    - pydatamail >=0.0.5
+    - numpy >=1.23.0
+    - pandas >=1.4.3
+    - pydatamail >=0.0.6
     - python >=3.6
-    - sqlalchemy >=1.4.37
+    - sqlalchemy >=1.4.39
     - tqdm >=4.64.0
 
 test:
