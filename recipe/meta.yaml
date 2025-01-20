@@ -20,6 +20,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - google-api-python-client >=2.52.0
     - google-auth >=2.9.0
