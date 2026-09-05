@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: pydatamail_google
+  version: "0.0.8"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pydatamail_google-${{ version }}.tar.gz
+  sha256: f8b978a20cd6114554d0d06d2cdd658ae1d068851ec78f98173bf20a50f55704
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - pydatamail_google=pydatamail_google.__main__:command_line_parser
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - google-api-python-client >=2.52.0
+    - google-auth >=2.9.0
+    - google-auth-oauthlib >=0.5.2
+    - matplotlib-base >=3.5.2
+    - numpy >=1.23.0
+    - pandas >=1.4.3
+    - pydatamail >=0.0.9
+    - python >=${{ python_min }}
+    - sqlalchemy >=1.4.39
+    - tqdm >=4.64.0
+
+tests:
+  - python:
+      imports:
+        - pydatamail_google
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pydatamail_google --help
+
+about:
+  summary: Python interface to filter emails on Google Mail.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/pyscioffice/pydatamail_google
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
